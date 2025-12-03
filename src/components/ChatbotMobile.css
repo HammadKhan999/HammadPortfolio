@@ -1,0 +1,24 @@
+/* Mobile chatbot header compact styles */
+@media (max-width: 768px) {
+    .chatbot-header {
+        padding: 0.6rem !important;
+    }
+
+    .chatbot-header h3 {
+        font-size: 0.9rem !important;
+    }
+
+    .chatbot-header p {
+        font-size: 0.65rem !important;
+    }
+
+    .header-icon {
+        font-size: 1.1rem !important;
+    }
+
+    .close-btn {
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 0.95rem !important;
+    }
+}

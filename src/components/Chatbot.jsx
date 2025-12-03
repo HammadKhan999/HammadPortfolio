@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { FiMessageCircle, FiX, FiSend } from 'react-icons/fi';
 import { sendMessage } from '../utils/geminiClient';
 import './Chatbot.css';
+import './ChatbotMobile.css';
 
 const Chatbot = ({ isOpen, onToggle }) => {
     const [messages, setMessages] = useState([
