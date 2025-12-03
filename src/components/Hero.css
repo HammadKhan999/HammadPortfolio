@@ -272,3 +272,30 @@
         height: 200px;
     }
 }
+
+/* Extra small screens - Hero adjustments */
+@media (max-width: 480px) {
+    .hero {
+        text-align: center;
+        padding: var(--spacing-2xl) var(--spacing-sm);
+        min-height: 90vh;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+}

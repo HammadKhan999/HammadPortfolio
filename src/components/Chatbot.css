@@ -319,3 +319,27 @@
         border-radius: 0;
     }
 }
+
+/* --------------------------------------------------- */
+/* Chatbot wrapper – responsive container */
+.chatbot-wrapper {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 360px;
+    max-width: 95vw;
+    z-index: var(--z-modal);
+}
+
+.chatbot-wrapper.closed {
+    width: auto;
+}
+
+/* Increase hit‑area for very small screens */
+@media (max-width: 360px) {
+    .chat-float-btn {
+        width: 2.8rem;
+        height: 2.8rem;
+        font-size: 1.5rem;
+    }
+}

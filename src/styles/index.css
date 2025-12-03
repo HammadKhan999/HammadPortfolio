@@ -450,6 +450,74 @@ code {
   }
 }
 
+/* Extra mobile-first overrides (≤480px) */
+@media (max-width: 480px) {
+
+  /* Tighter spacing for small screens */
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .container,
+  .container-wide {
+    padding: 0 var(--spacing-sm);
+    max-width: 100%;
+  }
+
+  /* Smaller headings */
+  h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 5vw, 2.5rem);
+  }
+
+  h3 {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+  }
+
+  /* Touch-friendly buttons */
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.95rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Ensure all grids collapse */
+  .grid,
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  /* Full-width cards */
+  .glass-card {
+    width: 100%;
+    margin: var(--spacing-sm) 0;
+    padding: var(--spacing-md);
+  }
+
+  /* Responsive images */
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Form elements */
+  input,
+  textarea,
+  select {
+    width: 100%;
+    font-size: 16px;
+    /* Prevents zoom on iOS */
+  }
+}
+
 /* Accessibility */
 .sr-only {
   position: absolute;
