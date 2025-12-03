@@ -1,0 +1,165 @@
+.education {
+    background: var(--bg-primary);
+}
+
+.education-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.education-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.education-icon {
+    font-size: 3rem;
+    color: var(--accent-primary);
+    flex-shrink: 0;
+    padding: var(--spacing-md);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.education-info {
+    flex: 1;
+}
+
+.degree-name {
+    font-size: 1.8rem;
+    color: var(--accent-primary);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 700;
+}
+
+.institution {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.education-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--accent-primary);
+}
+
+.detail-item {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: baseline;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 100px;
+}
+
+.detail-value {
+    color: var(--text-secondary);
+}
+
+.relevant-courses {
+    margin-top: var(--spacing-lg);
+}
+
+.relevant-courses h4 {
+    font-size: 1.3rem;
+    color: var(--accent-primary);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    padding-bottom: var(--spacing-xs);
+}
+
+.relevant-courses h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.courses-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-sm);
+    padding: 0;
+}
+
+.courses-list li {
+    position: relative;
+    padding-left: var(--spacing-lg);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    transition: color var(--transition-fast);
+}
+
+.courses-list li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+    font-size: 1.2rem;
+}
+
+.courses-list li:hover {
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .education-card {
+        padding: var(--spacing-lg);
+    }
+
+    .education-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .education-icon {
+        font-size: 2.5rem;
+    }
+
+    .degree-name {
+        font-size: 1.5rem;
+    }
+
+    .institution {
+        font-size: 1.1rem;
+    }
+
+    .detail-item {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .detail-label {
+        min-width: auto;
+    }
+
+    .courses-list {
+        grid-template-columns: 1fr;
+    }
+
+    .courses-list li {
+        padding-left: var(--spacing-md);
+        font-size: 0.9rem;
+    }
+}
