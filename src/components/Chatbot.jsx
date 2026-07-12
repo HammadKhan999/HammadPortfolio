@@ -13,7 +13,6 @@ const Chatbot = ({ isOpen, onToggle }) => {
     ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
     const messagesEndRef = useRef(null);
     const inputRef = useRef(null);
 
@@ -36,7 +35,6 @@ const Chatbot = ({ isOpen, onToggle }) => {
 
         const userMessage = input.trim();
         setInput('');
-        setError(null);
 
         // Add user message
         setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
@@ -45,8 +43,7 @@ const Chatbot = ({ isOpen, onToggle }) => {
         try {
             const response = await sendMessage(userMessage);
             setMessages(prev => [...prev, { role: 'assistant', content: response }]);
-        } catch (err) {
-            setError(err.message);
+        } catch {
             setMessages(prev => [...prev, {
                 role: 'assistant',
                 content: "I apologize, but I'm having trouble connecting right now. Please try again in a moment."
@@ -93,7 +90,7 @@ const Chatbot = ({ isOpen, onToggle }) => {
                     </button>
                 </div>
 
-                <div className="chatbot-messages">
+                <div className="chatbot-messages" role="log" aria-live="polite" aria-label="Chat messages">
                     {messages.map((message, index) => (
                         <div
                             key={index}
@@ -122,9 +119,10 @@ const Chatbot = ({ isOpen, onToggle }) => {
                         type="text"
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
-                        onKeyPress={handleKeyPress}
+                        onKeyDown={handleKeyPress}
                         placeholder="Ask about experience, skills, projects..."
                         disabled={isLoading}
+                        aria-label="Type your message"
                     />
                     <button
                         onClick={handleSend}

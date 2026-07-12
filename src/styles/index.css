@@ -27,6 +27,11 @@
   /* Glow Colors - White (Dark) */
   --glow: rgba(255, 255, 255, 0.4);
   --glow-purple: rgba(255, 255, 255, 0.2);
+  --glow-subtle: rgba(255, 255, 255, 0.08);
+  --color-on-accent: #000000;
+
+  /* Accent (reserved for future use) */
+  --accent-highlight: #ffffff;
 
   --border-color: #333333;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -93,6 +98,11 @@
   /* Glow Colors - Black (Light) */
   --glow: rgba(0, 0, 0, 0.3);
   --glow-purple: rgba(0, 0, 0, 0.15);
+  --glow-subtle: rgba(0, 0, 0, 0.05);
+  --color-on-accent: #ffffff;
+
+  /* Accent (reserved for future use) */
+  --accent-highlight: #000000;
 
   --border-color: #e5e5e5;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -109,7 +119,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
@@ -264,7 +273,6 @@ code {
 
 .glass-card:hover {
   background: var(--bg-card-hover);
-  transform: translateY(-5px);
   box-shadow: var(--shadow-glow);
   border-color: var(--accent-primary);
 }
@@ -297,7 +305,7 @@ code {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, var(--glow-subtle), transparent);
   transition: left var(--transition-slow);
 }
 

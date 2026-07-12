@@ -11,13 +11,13 @@
 }
 
 .projects-filter .filter-btn.active {
-    background: #1a1a1a !important;
-    color: #ffffff !important;
+    background: var(--gradient-primary);
+    color: var(--color-on-accent);
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(350px, 100%), 1fr));
     gap: var(--spacing-xl);
 }
 
@@ -31,7 +31,7 @@
 
 .project-card.featured {
     border: 2px solid var(--accent-primary);
-    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(0, 217, 255, 0.05) 100%);
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--glow-subtle) 100%);
 }
 
 .featured-badge {
@@ -39,7 +39,7 @@
     top: var(--spacing-md);
     right: var(--spacing-md);
     background: var(--gradient-primary);
-    color: white;
+    color: var(--color-on-accent);
     padding: 0.4rem 0.8rem;
     border-radius: var(--radius-sm);
     font-size: 0.8rem;
@@ -136,7 +136,7 @@
 .project-link:hover {
     background: var(--accent-primary);
     border-color: var(--accent-primary);
-    color: white;
+    color: var(--color-on-accent);
     transform: scale(1.1) rotate(10deg);
 }
 

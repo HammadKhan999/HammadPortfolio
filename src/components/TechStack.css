@@ -20,7 +20,6 @@
     color: var(--text-primary);
     font-weight: 500;
     font-size: clamp(0.85rem, 1.5vw, 1rem);
-    cursor: pointer;
     transition: all var(--transition-base);
     animation: fadeInUp 0.6s ease-out backwards;
     position: relative;
@@ -50,7 +49,7 @@
     border-color: var(--accent-primary);
     color: var(--accent-primary);
     transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 10px 25px rgba(0, 217, 255, 0.3);
+    box-shadow: 0 10px 25px var(--glow-subtle);
 }
 
 /* Random sizes for visual interest */
@@ -101,7 +100,7 @@
     width: 32px;
     height: 32px;
     background: var(--gradient-primary);
-    color: white;
+    color: var(--color-on-accent);
     border-radius: 50%;
     font-weight: 700;
     font-size: 0.9rem;

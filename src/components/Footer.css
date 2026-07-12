@@ -57,16 +57,24 @@
     gap: var(--spacing-sm);
 }
 
-.footer-section a {
+.footer-section a,
+.footer-section button {
     color: var(--text-secondary);
     text-decoration: none;
     transition: all var(--transition-fast);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    background: none;
+    border: none;
+    font-family: var(--font-primary);
+    font-size: inherit;
+    cursor: pointer;
+    padding: 0;
 }
 
-.footer-section a:hover {
+.footer-section a:hover,
+.footer-section button:hover {
     color: var(--accent-primary);
     transform: translateX(5px);
 }
@@ -92,11 +100,6 @@
     gap: 0.4rem;
 }
 
-.heart {
-    color: #ff006e;
-    animation: heartbeat 1.5s ease-in-out infinite;
-}
-
 .back-to-top {
     position: fixed;
     bottom: var(--spacing-lg);
@@ -106,7 +109,7 @@
     background: var(--gradient-primary);
     border: none;
     border-radius: 50%;
-    color: white;
+    color: var(--color-on-accent);
     font-size: 1.5rem;
     cursor: pointer;
     display: flex;
@@ -115,6 +118,15 @@
     box-shadow: var(--shadow-lg);
     transition: all var(--transition-base);
     z-index: var(--z-sticky);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
 }
 
 .back-to-top:hover {

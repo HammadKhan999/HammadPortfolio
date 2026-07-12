@@ -24,6 +24,11 @@ const Experience = () => {
                                         <h4 className="company-name">{job.company}</h4>
                                     </div>
                                     <div className="job-meta">
+                                        {job.status && (
+                                            <span className={`status-badge status-${job.status}`}>
+                                                {job.status === 'current' ? 'Current' : 'Past'}
+                                            </span>
+                                        )}
                                         <div className="meta-item">
                                             <FiCalendar />
                                             <span>{job.duration}</span>

@@ -28,3 +28,5 @@ _legacy_backup/
 *.njsproj
 *.sln
 *.sw?
+.opencode/
+Hammad.Khan.Resume.pdf

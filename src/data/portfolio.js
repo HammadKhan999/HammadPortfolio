@@ -1,16 +1,16 @@
 // Portfolio data extracted from resume
 export const personalInfo = {
     name: "Hammad Khan",
-    title: "Acting Lead - Data Science and Engineering",
+    title: "Data Scientist",
     email: "ak655796@gmail.com",
     phone: "+92 333 6974911",
-    location: "Islamabad",
+    location: "Lahore",
     linkedin: "https://linkedin.com/in/hammad-khan",
     github: "https://github.com/HammadKhan999",
-    portfolio: "https://hammadkhan999.github.io/HammadPortfolio/",
+    portfolio: "https://hammad-portfolio-eight.vercel.app/",
 };
 
-export const summary = `Acting Lead - Data Science and Engineering with 2+ year experience in data science, automation, and data engineering. Skilled in MLOps, machine learning, API integrations, and data analytics, with experience in building and deploying ML models and creating Streamlit applications to build and deploy CI/CD pipelines. Proficient in developing interactive dashboards and automating workflows to drive efficiency. Passionate about leveraging technology to solve complex problems, optimize processes, and enable data-driven decision-making.`;
+export const summary = `Data Scientist with 3+ years experience in data science, automation, and data engineering. Skilled in MLOps, machine learning, API integrations, and data analytics, with experience in building and deploying AI-driven solutions using Streamlit, cloud platforms, and CI/CD pipelines. Proficient in developing interactive dashboards and automating workflows to drive efficiency. Passionate about leveraging technology to solve complex problems, optimize processes, and enable data-driven decision-making.`;
 
 export const skills = {
     "Machine Learning & AI": [
@@ -33,55 +33,72 @@ export const skills = {
     ],
     "Visualization": ["Tableau", "Power BI", "Looker Studio"],
     "Cloud & DevOps": [
-        "Microsoft Azure AI",
         "GitHub / GitHub Actions",
         "Railway",
         "Google Appscript",
     ],
     "Databases": ["BigQuery", "MongoDB", "Supabase"],
-    "Office & Productivity": ["MS Office", "Google Sheets API"],
-    "Other": ["Web Development", "API Development", "OpenAI SDK"],
+    "Other": ["Python Scripting", "API Development", "OpenAI SDK", "MS Office"],
 };
 
 export const experience = [
     {
         id: 1,
-        company: "Techbaltoro LLC",
-        position: "Acting Lead Data Science and Engineering",
-        location: "Islamabad, Pakistan",
-        duration: "2023 Dec - present",
+        company: "Codebricks Global",
+        position: "Data Scientist",
+        location: "",
+        duration: "2026 Apr - Present",
+        status: "current",
         achievements: [
-            "Automated product data collection using Keepa API, Google Sheets API, and Python, enhancing research efficiency.",
-            "Trained and deployed a amazon product classification model in production.",
-            "Utilized LIME (Explainable AI) to interpret model predictions and MLflow to manage ML pipelines.",
-            "Built and hosted an MVP on Streamlit, integrating product analytics, classification, and BSR forecasting using Facebook Prophet.",
-            "Automated daily reporting across three sales channels using Amazon SP API, Python and Github Actions reducing manual effort and errors.",
-            "Designed and developed reimbursement and team performance dashboards in looker studio, improving financial and operational insights.",
-            "Built a stock file evaluation system using Python, GitHub Actions, and GCP, integrating a self-hosted runner to streamline CI/CD workflows and cut processing time by 80%.",
-            "Led the development of the eCrew Calculator Chrome extension for real-time margin calculations and data-driven decision-making.",
-            "Designed database schema for Ecrew calculator on BigQuery, optimizing data storage and query cost.",
-            "Developed backend RESTful API's endpoints for eCrew.ai @ backend and hosted opensource supabase on railway",
-            "Developed automated offline employee drive backup solutions.",
-            "Conducted feasibility analysis to optimize internal tool costs, ensuring cost-effective operations.",
-            "Automated finance team closing processes for multiple amazon channels, reducing closing time by 50%.",
+            "Clean and analyze large-scale sensory datasets using Python, Pandas, and SQL to generate consumer and market insights.",
+            "Automated sensory data cleaning and preprocessing workflows by developing Python scripts with AI-assisted development tools such as Claude, reducing manual processing time by 30%-40%.",
+            "Applied PCA, Preference Mapping (PrefMap), and statistical analysis to identify key sensory drivers and consumer preference patterns.",
+            "Trained and evaluated Random Forest models for Drivers of Liking (DoL) prediction and sensory attribute importance analysis.",
+            "Built an AI-powered conversational analytics agent using CrewAI, FastAPI, and LLM to enable natural language querying of survey and sensory data.",
         ],
     },
     {
         id: 2,
+        company: "Techbaltoro LLC",
+        position: "Acting Lead Data Science and Engineering",
+        location: "Islamabad, Pakistan",
+        duration: "2023 Dec - 2026 Apr",
+        status: "past",
+        achievements: [
+            "Led BI and data team of 3 members, managing daily operations, sprint planning, and task prioritization.",
+            "Collaborated with cross-functional teams to gather requirements and translate them into scalable technical solutions.",
+            "Designed, built, and maintained ETL pipelines for daily, weekly, and peak-season reporting.",
+            "Automated product data pipelines using Keepa API, Amazon SP API, Google Sheets API, and Python, improving research efficiency.",
+            "Developed and deployed ML pipelines, including an Amazon product classification model with explainability (LIME) and tracking via MLflow.",
+            "Built and launched a Streamlit-based MVP integrating product analytics, classification, and BSR forecasting (Facebook Prophet).",
+            "Researched and implemented tools (e.g., n8n, DagsHub, Odoo) to enhance operational workflows and automation capabilities.",
+            "Built automation workflows for supplier due diligence using n8n, reducing onboarding time by 70%.",
+            "Automated financial reporting and closing processes across multiple Amazon channels, reducing manual effort and cutting closing time by 50%.",
+            "Designed dashboards in Looker Studio for reimbursement tracking and team performance, improving financial and operational visibility.",
+            "Engineered a stock file evaluation system using Python, GCP, and CI/CD pipelines, reducing processing time by 80%.",
+            "Led development of the eCrew Calculator (Chrome extension) for real-time margin analysis and decision-making.",
+            "Designed BigQuery database schema and developed RESTful APIs; deployed backend using Supabase on Railway.",
+            "Developed automated backup solutions for internal systems, ensuring data reliability and continuity.",
+        ],
+    },
+    {
+        id: 3,
         company: "Convergent Business Technologies",
         position: "Trainee Data Analytics",
         location: "Islamabad",
         duration: "2023 Jul - 2023 Oct",
+        status: "past",
         achievements: [
             "Databases | Data Preprocessing | Scrum | Data Analytics | Statistical Learning | SQL | C | Tableau | Problem Solving | Presentation Skills",
         ],
     },
     {
-        id: 3,
+        id: 4,
         company: "Fiverr",
         position: "Professional Freelancer",
         location: "",
         duration: "2022 - 2023",
+        status: "past",
         achievements: [
             "Worked with clients in different domains, such as WordPress web development, Data Management, and Python programming.",
         ],
@@ -95,7 +112,7 @@ export const projects = [
         category: "Professional",
         tags: ["AI", "Multi-Agent", "React", "Python", "CrewAI"],
         description:
-            "Led the design of the CrewAI multi-agent system for DataIntel Hub at 3 day hackfest 3.0 by RemoteBase, enabling automated data analysis and visualization. Collaborated with the team to create a platform that delivers instant insights, predicting efficiency for both SMBs and enterprises.",
+            "Led the design of the CrewAI multi-agent system for DataIntel Hub at 3 day hackfest 3.0 by RemoteBase, enabling automated data analysis and visualization. Collaborated with the team to create a platform that delivers instant insights, boosting efficiency for both SMBs and enterprises.",
         technologies: ["React", "Python", "CrewAI", "Render"],
         github: "",
         demo: "",
@@ -106,47 +123,28 @@ export const projects = [
         name: "Energy Signature Forecasting",
         category: "Academic",
         tags: ["Machine Learning", "Forecasting", "Python"],
-        description:
-            "Building energy signature, measurement, recording and forecasting (Final Year Project)",
-        technologies: ["Python", "Machine Learning", "Time Series Analysis"],
-        github: "",
-        demo: "",
-        featured: false,
+        description: "Building energy signature, measurement, recording and forecasting (Final Year Project)",
     },
     {
         id: 3,
         name: "Hospital Readmission Prediction",
         category: "Academic",
         tags: ["Machine Learning", "Healthcare", "Python"],
-        description:
-            "Predict and reduce readmission rate in hospitals using predictive modeling",
-        technologies: ["Python", "Scikit-learn", "Pandas"],
-        github: "",
-        demo: "",
-        featured: false,
+        description: "Predict and reduce readmission rate in hospitals using predictive modeling",
     },
     {
         id: 4,
         name: "University Management System",
         category: "Academic",
-        tags: ["Web Development", "Database", "PHP"],
-        description: "University management system using tkinter, mySQL and python",
-        technologies: ["Python", "Tkinter", "MySQL"],
-        github: "",
-        demo: "",
-        featured: false,
+        tags: ["Web Development", "Database", "Python"],
+        description: "University management system using tkinter, MySQL and Python",
     },
     {
         id: 5,
         name: "Rotating Shaft Unbalancing Detection",
         category: "Academic",
         tags: ["Machine Learning", "CNN", "Vibration Analysis"],
-        description:
-            "Random forest and CNN model for detection of unbalancing of rotating shaft using vibration data",
-        technologies: ["Python", "TensorFlow", "Random Forest"],
-        github: "",
-        demo: "",
-        featured: false,
+        description: "Random forest and CNN model for detection of unbalancing of rotating shaft using vibration data",
     },
 ];
 
@@ -267,7 +265,8 @@ export const education = {
 };
 
 export const courses = [
-    "CSSO | SQL for Data Analysts",
+    "CS50",
+    "SQL for Data Analysis",
     "The Scrum Guide",
     "Introduction to Statistic Learning in Python",
     "Figma Course",

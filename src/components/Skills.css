@@ -6,7 +6,7 @@
     text-align: center;
     color: var(--text-muted);
     font-size: 1.1rem;
-    margin-top: -var(--spacing-md);
+    margin-top: 0;
     margin-bottom: var(--spacing-xl);
 }
 
@@ -45,15 +45,8 @@
 .filter-btn.active {
     background: var(--gradient-primary);
     border-color: transparent;
-    color: white;
+    color: var(--color-on-accent);
     box-shadow: var(--shadow-glow);
-}
-
-@media (prefers-color-scheme: dark) {
-    .filter-btn.active {
-        background: #1a1a1a !important;
-        color: #ffffff !important;
-    }
 }
 
 .skills-container {
@@ -100,7 +93,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    cursor: pointer;
     transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
@@ -126,7 +118,7 @@
 .skill-item:hover {
     border-color: var(--accent-primary);
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 217, 255, 0.2);
+    box-shadow: 0 8px 20px var(--glow-subtle);
 }
 
 .skill-name {

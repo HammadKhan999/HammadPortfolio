@@ -1,10 +1,31 @@
+import { useState, useEffect } from 'react';
+import { FiArrowUp, FiGithub, FiLinkedin } from 'react-icons/fi';
 import { personalInfo } from '../data/portfolio';
-import { FiHeart, FiArrowUp, FiGithub, FiLinkedin } from 'react-icons/fi';
 import './Footer.css';
 
 const Footer = () => {
+    const [showBackToTop, setShowBackToTop] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowBackToTop(window.scrollY > 500);
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const offset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+            window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
     };
 
     return (
@@ -23,10 +44,10 @@ const Footer = () => {
                             <div className="footer-section">
                                 <h4>Quick Links</h4>
                                 <ul>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#skills">Skills</a></li>
-                                    <li><a href="#experience">Experience</a></li>
-                                    <li><a href="#projects">Projects</a></li>
+                                    <li><button onClick={() => scrollToSection('about')}>About</button></li>
+                                    <li><button onClick={() => scrollToSection('skills')}>Skills</button></li>
+                                    <li><button onClick={() => scrollToSection('experience')}>Experience</button></li>
+                                    <li><button onClick={() => scrollToSection('projects')}>Projects</button></li>
                                 </ul>
                             </div>
 
@@ -53,16 +74,16 @@ const Footer = () => {
 
                     <div className="footer-bottom">
                         <p className="copyright">
-                            © {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
+                            &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
                         </p>
                         <p className="built-with">
-                            Built with <FiHeart className="heart" /> using React & Vite
+                            Built with React &amp; Vite
                         </p>
                     </div>
                 </div>
 
                 <button
-                    className="back-to-top"
+                    className={`back-to-top ${showBackToTop ? 'visible' : ''}`}
                     onClick={scrollToTop}
                     aria-label="Back to top"
                 >

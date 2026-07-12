@@ -60,29 +60,31 @@ const Projects = () => {
                                 ))}
                             </div>
 
-                            <div className="project-footer">
-                                <div className="project-tech">
-                                    {project.technologies.slice(0, 3).map((tech, i) => (
-                                        <span key={i} className="tech-badge badge-gradient">{tech}</span>
-                                    ))}
-                                    {project.technologies.length > 3 && (
-                                        <span className="tech-more">+{project.technologies.length - 3}</span>
-                                    )}
-                                </div>
+                            {project.technologies && (
+                                <div className="project-footer">
+                                    <div className="project-tech">
+                                        {project.technologies.slice(0, 3).map((tech, i) => (
+                                            <span key={i} className="tech-badge badge-gradient">{tech}</span>
+                                        ))}
+                                        {project.technologies.length > 3 && (
+                                            <span className="tech-more">+{project.technologies.length - 3}</span>
+                                        )}
+                                    </div>
 
-                                <div className="project-links">
-                                    {project.github && (
-                                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
-                                            <FiGithub />
-                                        </a>
-                                    )}
-                                    {project.demo && (
-                                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link">
-                                            <FiExternalLink />
-                                        </a>
-                                    )}
+                                    <div className="project-links">
+                                        {project.github && (
+                                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
+                                                <FiGithub />
+                                            </a>
+                                        )}
+                                        {project.demo && (
+                                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link">
+                                                <FiExternalLink />
+                                            </a>
+                                        )}
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                         </div>
                     ))}
                 </div>

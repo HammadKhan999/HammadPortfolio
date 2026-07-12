@@ -35,7 +35,7 @@ const Skills = () => {
                 </div>
 
                 <div className="skills-container">
-                    {getFilteredSkills().map(([category, skillList], categoryIndex) => (
+                    {getFilteredSkills().map(([category, skillList]) => (
                         <div key={category} className="skill-category glass-card">
                             <h3 className="category-title">{category}</h3>
                             <div className="skills-grid">

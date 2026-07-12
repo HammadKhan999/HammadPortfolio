@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { FiCpu, FiBarChart2, FiCode, FiZap } from 'react-icons/fi';
 import { summary } from '../data/portfolio';
 import './About.css';
 
@@ -25,7 +26,7 @@ const About = () => {
     }, []);
 
     const stats = [
-        { number: '2+', label: 'Years Experience' },
+        { number: '3+', label: 'Years Experience' },
         { number: '10+', label: 'Certifications' },
         { number: '25+', label: 'Technologies' },
         { number: '5+', label: 'Major Projects' },
@@ -46,28 +47,28 @@ const About = () => {
                             <h3>What I Do</h3>
                             <ul className="highlights-list">
                                 <li>
-                                    <span className="highlight-icon">🤖</span>
+                                    <span className="highlight-icon"><FiCpu /></span>
                                     <div>
                                         <strong>Machine Learning & AI</strong>
                                         <p>Building and deploying ML models, MLOps pipelines, and multi-agent AI systems</p>
                                     </div>
                                 </li>
                                 <li>
-                                    <span className="highlight-icon">📊</span>
+                                    <span className="highlight-icon"><FiBarChart2 /></span>
                                     <div>
                                         <strong>Data Engineering</strong>
                                         <p>Designing data pipelines, optimizing databases, and automating workflows</p>
                                     </div>
                                 </li>
                                 <li>
-                                    <span className="highlight-icon">💻</span>
+                                    <span className="highlight-icon"><FiCode /></span>
                                     <div>
                                         <strong>Full Stack Development</strong>
                                         <p>Creating interactive dashboards, APIs, and web applications</p>
                                     </div>
                                 </li>
                                 <li>
-                                    <span className="highlight-icon">⚡</span>
+                                    <span className="highlight-icon"><FiZap /></span>
                                     <div>
                                         <strong>Automation & Optimization</strong>
                                         <p>Streamlining processes, reducing costs, and improving efficiency</p>
