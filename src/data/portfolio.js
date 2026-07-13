@@ -5,7 +5,7 @@ export const personalInfo = {
     email: "ak655796@gmail.com",
     phone: "+92 333 6974911",
     location: "Lahore",
-    linkedin: "https://linkedin.com/in/hammad-khan",
+    linkedin: "https://www.linkedin.com/in/hammad-khan2905",
     github: "https://github.com/HammadKhan999",
     portfolio: "https://hammad-portfolio-eight.vercel.app/",
 };
