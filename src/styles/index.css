@@ -197,6 +197,7 @@ h4 {
 p {
   margin-bottom: var(--spacing-sm);
   color: var(--text-secondary);
+  text-align: justify;
 }
 
 a {

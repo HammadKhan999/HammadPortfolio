@@ -1,52 +1,53 @@
-import { useState } from 'react';
+import { useMemo } from 'react';
 import { skills } from '../data/portfolio';
+import { FiCpu, FiDatabase, FiCode, FiBarChart2, FiCloud, FiSettings, FiSliders } from 'react-icons/fi';
 import './Skills.css';
 
+const ICONS = {
+    'Machine Learning & AI': <FiCpu />,
+    'Data Engineering & Databases': <FiDatabase />,
+    'Programming Languages': <FiCode />,
+    'Data Analytics & BI': <FiBarChart2 />,
+    'Cloud & DevOps': <FiCloud />,
+    'Tools & Frameworks': <FiSettings />,
+    'Other Skills': <FiSliders />,
+};
+
+const CATEGORY_MAP = {
+    'Machine Learning & AI': ['Machine Learning & AI'],
+    'Data Engineering & Databases': ['Data Engineering', 'Databases'],
+    'Programming Languages': ['Programming Languages'],
+    'Data Analytics & BI': ['Data Analytics', 'Visualization'],
+    'Cloud & DevOps': ['Cloud & DevOps'],
+    'Tools & Frameworks': ['Tools & Frameworks'],
+    'Other Skills': ['Other'],
+};
+
 const Skills = () => {
-    const [activeCategory, setActiveCategory] = useState('all');
-
-    const categories = ['all', ...Object.keys(skills)];
-
-    const getFilteredSkills = () => {
-        if (activeCategory === 'all') {
-            return Object.entries(skills);
-        }
-        return [[activeCategory, skills[activeCategory]]];
-    };
+    const categories = useMemo(() => {
+        return Object.entries(CATEGORY_MAP).map(([label, sources]) => {
+            const items = [...new Set(sources.flatMap(s => skills[s] || []))];
+            return { label, icon: ICONS[label], items };
+        });
+    }, []);
 
     return (
         <section id="skills" className="section skills">
             <div className="container">
                 <div className="section-title">
                     <h2>Skills & Technologies</h2>
-                    <p className="section-subtitle">Tools and technologies I work with</p>
                 </div>
 
-                <div className="skills-filter">
-                    {categories.map((category) => (
-                        <button
-                            key={category}
-                            className={`filter-btn ${activeCategory === category ? 'active' : ''}`}
-                            onClick={() => setActiveCategory(category)}
-                        >
-                            {category === 'all' ? 'All Skills' : category}
-                        </button>
-                    ))}
-                </div>
-
-                <div className="skills-container">
-                    {getFilteredSkills().map(([category, skillList]) => (
-                        <div key={category} className="skill-category glass-card">
-                            <h3 className="category-title">{category}</h3>
-                            <div className="skills-grid">
-                                {skillList.map((skill, index) => (
-                                    <div
-                                        key={index}
-                                        className="skill-item"
-                                        style={{ animationDelay: `${index * 0.05}s` }}
-                                    >
-                                        <span className="skill-name">{skill}</span>
-                                    </div>
+                <div className="skills-grid">
+                    {categories.map(({ label, icon, items }) => (
+                        <div key={label} className="skill-category glass-card">
+                            <div className="category-header">
+                                <span className="category-icon">{icon}</span>
+                                <h3 className="category-title">{label}</h3>
+                            </div>
+                            <div className="skill-chips">
+                                {items.map((skill, i) => (
+                                    <span key={i} className="skill-chip">{skill}</span>
                                 ))}
                             </div>
                         </div>

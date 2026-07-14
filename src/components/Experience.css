@@ -154,6 +154,7 @@
     margin-bottom: var(--spacing-sm);
     color: var(--text-secondary);
     line-height: 1.6;
+    text-align: justify;
 }
 
 .achievements-list li::before {

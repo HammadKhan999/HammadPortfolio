@@ -253,6 +253,7 @@
     .hero-content {
         padding: 0 var(--spacing-sm);
         order: 2;
+        text-align: center;
     }
 
     .hero-image-wrapper {
