@@ -6,17 +6,21 @@
     position: relative;
     max-width: 900px;
     margin: 0 auto;
-    padding-left: var(--spacing-xl);
+    --timeline-line-left: 32px;
+    --timeline-dot-size: 45px;
+    --timeline-gap: 20px;
+    padding-left: calc(var(--timeline-line-left) + var(--timeline-dot-size) / 2 + var(--timeline-gap));
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    left: var(--spacing-sm);
+    left: var(--timeline-line-left);
     top: 0;
     bottom: 0;
     width: 2px;
     background: var(--border-color);
+    transform: translateX(-50%);
 }
 
 .timeline-item {
@@ -27,10 +31,10 @@
 
 .timeline-dot {
     position: absolute;
-    left: calc(-1 * var(--spacing-xl) - 2px);
+    left: calc(-1 * var(--timeline-dot-size) - var(--timeline-gap));
     top: 0;
-    width: 45px;
-    height: 45px;
+    width: var(--timeline-dot-size);
+    height: var(--timeline-dot-size);
     background: var(--gradient-primary);
     border-radius: 50%;
     display: flex;
@@ -45,7 +49,7 @@
 
 .timeline-content {
     padding: var(--spacing-xl);
-    margin-left: var(--spacing-md);
+    margin-left: 0;
     position: relative;
 }
 
@@ -166,23 +170,18 @@
 
 @media (max-width: 768px) {
     .timeline {
-        padding-left: var(--spacing-lg);
-    }
-
-    .timeline::before {
-        left: 0;
+        --timeline-line-left: 16px;
+        --timeline-dot-size: 35px;
+        --timeline-gap: 12px;
     }
 
     .timeline-dot {
-        left: calc(-1 * var(--spacing-lg) - 2px);
-        width: 35px;
-        height: 35px;
         font-size: 1rem;
     }
 
     .timeline-content {
         padding: var(--spacing-lg);
-        margin-left: var(--spacing-sm);
+        margin-left: 0;
     }
 
     .job-header {

@@ -30,6 +30,25 @@ const Chatbot = ({ isOpen, onToggle }) => {
         }
     }, [isOpen]);
 
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        const handleResize = () => {
+            if (isOpen && mediaQuery.matches) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        };
+
+        handleResize();
+        mediaQuery.addEventListener('change', handleResize);
+        return () => {
+            document.body.style.overflow = '';
+            mediaQuery.removeEventListener('change', handleResize);
+        };
+    }, [isOpen]);
+
+
     const handleSend = async () => {
         if (!input.trim() || isLoading) return;
 

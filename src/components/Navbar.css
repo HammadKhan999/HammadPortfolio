@@ -3,9 +3,11 @@
     top: 0;
     left: 0;
     right: 0;
+    height: var(--navbar-height, 70px);
     z-index: var(--z-fixed);
     background: transparent;
     transition: all var(--transition-base);
+    --navbar-height: 70px;
 }
 
 .navbar.scrolled {
@@ -19,7 +21,8 @@
 .navbar-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 1rem var(--spacing-md);
+    padding: 0 var(--spacing-md);
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -153,14 +156,18 @@
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+    .navbar {
+        --navbar-height: 60px;
+    }
+
     .navbar-container {
-        padding: 1rem var(--spacing-sm);
+        padding: 0 var(--spacing-sm);
     }
 
     .nav-backdrop {
         display: block;
         position: fixed;
-        top: 70px;
+        top: var(--navbar-height);
         left: 0;
         right: 0;
         bottom: 0;
@@ -172,11 +179,11 @@
 
     .nav-menu {
         position: fixed;
-        top: 70px;
+        top: var(--navbar-height);
         right: -100%;
         width: 100%;
         max-width: 300px;
-        height: calc(100vh - 70px);
+        height: calc(100dvh - var(--navbar-height));
         background: var(--bg-secondary);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);

@@ -336,8 +336,11 @@
 /* Extra small screens */
 @media (max-width: 480px) {
     .hero {
-        padding: var(--spacing-2xl) var(--spacing-sm);
-        min-height: 90vh;
+        padding-top: 90px;
+        padding-bottom: var(--spacing-2xl);
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+        min-height: auto;
     }
 
     .hero-image-ring {

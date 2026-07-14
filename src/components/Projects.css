@@ -168,3 +168,9 @@
         justify-content: flex-end;
     }
 }
+
+@media (max-width: 480px) {
+    .project-card {
+        padding: var(--spacing-md);
+    }
+}

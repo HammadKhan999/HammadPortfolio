@@ -150,6 +150,11 @@
         font-size: 1rem;
     }
 
+    .highlights-list li {
+        gap: var(--spacing-sm);
+        padding: var(--spacing-xs);
+    }
+
     .highlights-list strong {
         font-size: 1rem;
     }
@@ -163,6 +168,7 @@
     }
 
     .stat-card {
-        min-width: 100%;
+        min-width: calc(50% - var(--spacing-sm));
+        padding: var(--spacing-md);
     }
 }
